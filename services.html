@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Our Services</title>
+  <link rel="stylesheet" href="css/services-style.css?v=4">
+</head>
+<body>
+
+  <!-- Taskbar -->
+  <?php session_start(); ?>
+<div class="taskbar">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="AboutUs.html">About Us</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="CommonQuestions.html">Common Questions</a></li>
+
+    <?php if(isset($_SESSION['user_id'])): ?>
+      <li><a href="profile.html">Profile</a></li>
+    <?php endif; ?>
+
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</div>
+
+
+
+  <!-- Services Section -->
+  <section class="services-section">
+    <h1>Our Services</h1>
+    <p>Explore our range of services and request assistance easily:</p>
+
+    <div class="services-grid" id="servicesGrid">
+      <!-- First Row -->
+      <div class="service-card" data-service="IT Support">
+        <img src="images/Technical-Support.jpg" alt="Technical Support">
+        <h2>IT Support</h2>
+        <p>Fast and reliable IT support for all your needs.</p>
+      </div>
+      <div class="service-card" data-service="Facility Maintenance">
+        <img src="images/facility.jpg" alt="Facility Maintenance">
+        <h2>Facility Maintenance</h2>
+        <p>Keep your office and equipment in perfect condition.</p>
+      </div>
+      <div class="service-card" data-service="Logistics Services">
+        <img src="images/logistics.jpg" alt="Logistics Services">
+        <h2>Logistics Services</h2>
+        <p>Efficient handling of all logistic requirements.</p>
+      </div>
+
+      <!-- Second Row -->
+      <div class="service-card" data-service="Documents & Records">
+        <img src="images/Documents-Records.jpg" alt="Documents & Records">
+        <h2>Documents & Records</h2>
+        <p>Manage all documentation and official records.</p>
+      </div>
+      <div class="service-card" data-service="Hospitality Services">
+        <img src="images/hospitality.jpeg" alt="Hospitality Services">
+        <h2>Hospitality Services</h2>
+        <p>Professional service for visitors and events.</p>
+      </div>
+      <div class="service-card" data-service="Cleaning Services">
+        <img src="images/clean.jpg" alt="Cleaning Services">
+        <h2>Cleaning Services</h2>
+        <p>Ensure a clean and hygienic working environment.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal: Shows one service only -->
+  <div class="svc-modal__backdrop" id="svcModalBackdrop" aria-hidden="true">
+    <div class="svc-modal" role="dialog" aria-modal="true" aria-labelledby="svcModalTitle">
+      <header class="svc-modal__header">
+        <h3 id="svcModalTitle">Service Request</h3>
+        <button type="button" class="svc-modal__close" id="svcCloseBtn" aria-label="Close">×</button>
+      </header>
+
+      <form id="svcForm" class="svc-modal__body" novalidate>
+        <div class="svc-form__grid">
+          <div class="svc-row">
+            <label for="svcName">Name *</label>
+            <input id="svcName" name="name" type="text" required placeholder="Write your name">
+          </div>
+
+          <div class="svc-row">
+            <label for="svcOffice">Office number *</label>
+            <input id="svcOffice" name="office" type="text" required placeholder="e.g., 204">
+          </div>
+
+          <!-- Current Service Title -->
+          <div class="svc-row">
+            <label>Service</label>
+            <div id="svcCurrentService" class="svc-current"></div>
+          </div>
+
+          <!-- Options for this service -->
+          <div class="svc-row">
+            <label>Choose what you need in this service *</label>
+            <div id="svcSubOptionsArea" class="svc-subgrid"></div>
+          </div>
+        </div>
+
+        <footer class="svc-modal__footer">
+          <button type="submit" class="svc-btn svc-btn--primary">Execute the Request</button>
+          <button type="button" id="svcCancelBtn" class="svc-btn svc-btn--ghost">Cancel</button>
+        </footer>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/services-modal.js"></script>
+</body>
+</html>

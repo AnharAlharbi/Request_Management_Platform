@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Municipality Services</title>
+  <link rel="stylesheet" href="css/login-style.css">
+  <script src="js/login-script.js" defer></script>
+</head>
+<body>
+
+<!-- DEBUG: build 001 -->
+
+
+  <main class="page">
+    <section class="shell">
+      <!-- Left: image -->
+      <aside class="aside">
+        <img src="images/Login image.jpeg" alt="SERVICE">
+      </aside>
+
+      <!-- Right: forms -->
+      <div class="panel">
+        <div class="header">
+          <div>
+            <div class="title">Welcome 👋</div>
+            <div class="sub">Login or create an account for office services</div>
+          </div>
+          <div class="tabs" role="tablist">
+            <button class="tab" id="tab-login" aria-selected="true">Login</button>
+            <button class="tab" id="tab-signup" aria-selected="false">Sign Up</button>
+          </div>
+        </div>
+
+        <!-- Login form -->
+        <form id="pane-login" class="active" action="php/login.php" method="POST">
+
+          <div class="field">
+            <label for="loginEmail">Email</label>
+            <input id="loginEmail" type="email" name="loginEmail" placeholder="name@domain.com" required>
+          </div>
+
+          <div class="field">
+            <label for="loginPass">Password</label>
+            <input id="loginPass" type="password" name="loginPass" placeholder="••••••••" required>
+          </div>
+
+          <button class="btn" type="submit">Login</button>
+          <div id="loginMsg" class="msg"></div>
+        </form>
+
+        <!-- Signup form -->
+        <form id="pane-signup" 
+              action="/training_project/php/signup.php" method="POST">
+          <div class="field">
+            <label for="suName">Name</label>
+            <input id="suName" type="text" name="name" placeholder="Your Name" required>
+          </div>
+
+          <div class="field">
+            <label for="suEmail">Email</label>
+            <input id="suEmail" type="email" name="email" placeholder="name@domain.com" required>
+          </div>
+
+          <div class="field">
+            <label for="suPass">Password</label>
+            <input id="suPass" type="password" name="password" placeholder="••••••••" required>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <div class="field">
+                <label for="suDept">Department</label>
+                <select id="suDept" name="department" required>
+                  <option value="">Select Department</option>
+                  <option>IT</option>
+                  <option>Finance</option>
+                  <option>HR</option>
+                  <option>Legal</option>
+                  <option>PR</option>
+                </select>
+              </div>
+            </div>
+            <div class="col">
+              <div class="field">
+                <label for="suOffice">Office Number</label>
+                <input id="suOffice" type="text" name="office_number" placeholder="Ex: 105" required>
+              </div>
+            </div>
+          </div>
+
+          <button class="btn" type="submit">Create Account</button>
+          <div id="suMsg" class="msg"></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <script type="text/javascript">
+    // تبديل بين النماذج
+    document.getElementById('tab-login').addEventListener('click', function() {
+        document.getElementById('pane-login').classList.add('active');
+        document.getElementById('pane-signup').classList.remove('active');
+        this.setAttribute('aria-selected', 'true');
+        document.getElementById('tab-signup').setAttribute('aria-selected', 'false');
+    });
+
+    document.getElementById('tab-signup').addEventListener('click', function() {
+        document.getElementById('pane-signup').classList.add('active');
+        document.getElementById('pane-login').classList.remove('active');
+        this.setAttribute('aria-selected', 'true');
+        document.getElementById('tab-login').setAttribute('aria-selected', 'false');
+    });
+  </script>
+</body>
+</html>

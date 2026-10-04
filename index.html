@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Home</title>
+  <link rel="stylesheet" href="css/home-style.css">
+  <style>
+
+    /* زر تسجيل الدخول */
+    .btn-login a {
+      display: inline-block;
+      padding: 15px 40px;
+      background-color: #007bff;
+      color: black;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .btn-login a:hover {
+      background-color: #0056b3;
+      transform: translateY(-2px);
+      color: aliceblue;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- شريط المهام -->
+  <div class="taskbar">
+    <ul>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="profile.html">Profile</a></li>
+      <li><a href="CommonQuestions.html">Common Questions</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="AboutUs.html">About Us</a></li>
+      <li><a href="index.html">Home</a></li>
+    </ul>
+  </div>
+
+  <!-- الفيديو على كامل الشاشة -->
+  <div class="video-container">
+    <video autoplay muted loop playsinline id="myVideo">
+      <!-- الاسم مطابق لاسم الملف الفعلي: video/Home.mp4 (حرف H كبير) -->
+      <source src="video/Home.mp4" type="video/mp4">
+    </video>
+
+    <!-- مربع الهدف في منتصف الفيديو -->
+    <div class="video-overlay">
+      <div class="goal-box">
+        <h1>
+          We at Uqlat Al-Suqour Municipality strive to provide a reliable and efficient business environment
+        </h1>
+        <ul>
+          <li class="btn-login">
+            <a href="login.html">Login</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

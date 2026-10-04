@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Profile</title>
+  <link rel="stylesheet" href="css/profile.css">
+</head>
+<body>
+
+  <!-- شريط المهام -->
+<?php session_start(); ?>
+<div class="taskbar">
+  <ul>
+    <li><a href="contact.html">Contact</a></li>
+
+    <?php if(isset($_SESSION['user_id'])): ?>
+      <li><a href="profile.html">Profile</a></li>
+    <?php endif; ?>
+
+    <li><a href="CommonQuestions.html">Common Questions</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="AboutUs.html">About Us</a></li>
+    <li><a href="index.html">Home</a></li>
+  </ul>
+</div>
+
+
+
+
+
+
+  <div class="container">
+    <form id="profile-form">
+      <label>Name</label>
+      <input id="name" type="text" placeholder="Enter name" required>
+      
+      <label>Email</label>
+      <input id="email" type="email" placeholder="Enter email" required>
+      
+      <label>Password</label> <!-- تغيير من "code" إلى "password" -->
+      <input id="password" type="text" placeholder="Enter password" required>
+      
+      <label>Office Number</label>
+      <input id="office" type="text" placeholder="Enter office" required>
+
+      <button type="submit">Save</button>
+      <button type="button" id="clear">Clear</button>
+    </form>
+
+   <div class="profile-card" id="profile-card">
+    <h3 id="display-name">Name: —</h3>
+    <p id="display-email">Email: —</p>
+    <p id="display-password">Password: —</p>
+    <p id="display-office">Office Number: —</p>
+    <p id="display-department">Department: —</p>
+</div>
+
+  </div>
+
+<script src="js/profile.js"></script>
+</body>
+</html>

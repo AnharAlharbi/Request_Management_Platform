@@ -1,0 +1,147 @@
+/* =================== شريط المهام =================== */
+.taskbar {
+  background-color: rgba(255, 255, 255, 0.95); /* خلفية شفافة */
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 12px 0;
+}
+
+.taskbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.taskbar ul li {
+  margin: 0 15px;
+}
+
+.taskbar ul li a {
+  color: #2C3E50;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 18px;
+  font-size: 16px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.taskbar ul li a:hover,
+.taskbar ul li a.active {
+  background-color: #2196F3; /* تم التغيير إلى أزرق */
+  color: #fff;
+}
+
+/* =================== محتوى الصفحة =================== */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0; /* تم إزالة padding-top لأنه ليس ضروري */
+  background: linear-gradient(135deg, #e0f7fa, #ffffff);
+  color: #2C3E50;
+  min-height: 100vh; /* التأكد من تغطية كامل ارتفاع الصفحة */
+  display: flex;
+  justify-content: center; /* توسيط الأسئلة في الصفحة */
+  align-items: center; /* توسيط الأسئلة عموديًا */
+  flex-direction: column;
+  box-sizing: border-box; /* التأكد من أن البُعد يتضمن padding والمحتوى */
+}
+
+/* =================== الأسئلة في سطر واحد =================== */
+.faq-section {
+  padding: 20px;
+  background-color: transparent; /* جعل الخلفية شفافة */
+  border-radius: 8px;
+  width: 80%; /* عرض القسم */
+  max-width: 1000px; /* الحد الأقصى للعرض */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center; /* توسيط النص */
+}
+
+.faq-section h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #2C3E50;
+}
+
+.faq-section p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+  color: #555;
+}
+
+/* =================== الأسئلة في مربعات =================== */
+.faq-grid {
+  display: flex;
+  gap: 20px;
+  justify-content: center; /* توسيط الأسئلة */
+  flex-wrap: nowrap; /* إبقاء الأسئلة في سطر واحد */
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto; /* توسيط الشبكة */
+  overflow-x: auto; /* السماح بالتمرير الأفقي إذا كانت الأسئلة كثيرة */
+}
+
+.faq-card {
+  background-color: #fff; /* خلفية بيضاء للمربع */
+  border-radius: 8px;
+  padding: 15px;
+  width: 100%;
+  max-width: 250px; /* تحديد عرض كل مربع */
+  text-align: center; /* توسيط النص داخل المربع */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.faq-card img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.faq-card h2 {
+  font-size: 1.4em;
+}
+
+.faq-card p {
+  font-size: 1em;
+  color: #555;
+}
+
+.faq-link {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.faq-link:hover {
+  text-decoration: underline;
+}
+
+/* =================== التمرير (Scrollbar) =================== */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #2196F3; /* التمرير باللون الأزرق */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* خلفية التمرير */
+}
+
+/* =================== Responsive =================== */
+@media (max-width: 900px) {
+  .faq-grid {
+    flex-direction: column; /* عرض الأسئلة في عمود واحد */
+    align-items: center; /* توسيط الأسئلة */
+  }
+}
